@@ -2,20 +2,25 @@ public class RegistroStudenti {
     private Studente[] studenti;
     private int numeroStudenti;
 
-    // Costruttore senza parametri per inizializzare il registro vuoto
+    // Costruttore senza parametri per inizializzare il registro
     public RegistroStudenti() {
-        this.studenti = new Studente[100];
+        this.studenti = new Studente[0];
         this.numeroStudenti = 0;
     }
 
     // Metodo per aggiungere uno studente al registro
     public void aggiungiStudente(Studente studente) {
-        if (numeroStudenti < studenti.length) {
-            studenti[numeroStudenti] = studente;
-            numeroStudenti++;
-        } else {
-            System.out.println("Registro pieno, impossibile aggiungere altri studenti.");
+        if (numeroStudenti == studenti.length) {
+            // Creazione di un nuovo array con dimensione maggiore
+            Studente[] nuovoArray = new Studente[studenti.length + 1];
+            // Copia dei dati dal vecchio array al nuovo
+            for (int i = 0; i < studenti.length; i++) {
+                nuovoArray[i] = studenti[i];
+            }
+            studenti = nuovoArray;
         }
+        studenti[numeroStudenti] = studente;
+        numeroStudenti++;
     }
 
     // Metodo per stampare la lista degli studenti
