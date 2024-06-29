@@ -33,7 +33,7 @@ public class ListOrder {
         do {
             swapped = false;
             for (int i = 0; i < n - 1; i++) {
-                if (list.get(i).compareTo(list.get(i + 1)) > 0) {
+                if (list.get(i).compareToIgnoreCase(list.get(i + 1)) > 0) {
                     // Scambia gli elementi
                     String temp = list.get(i);
                     list.set(i, list.get(i + 1));
