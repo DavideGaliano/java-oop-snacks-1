@@ -16,6 +16,19 @@ public class HashSetComparator {
         }
 
         return true;
+        
+//        // Crea copie dei set per non modificare gli originali
+//        HashSet<String> copy1 = new HashSet<>(set1);
+//        HashSet<String> copy2 = new HashSet<>(set2);
+//
+//        // Rimuove gli elementi di set1 presenti in set2 e viceversa
+//        copy1.removeAll(set2);
+//        copy2.removeAll(set1);
+//
+//        // Se entrambi i set sono vuoti, hanno gli stessi elementi
+//        return copy1.isEmpty() && copy2.isEmpty();
+        
+        
     }
 
     public static void main(String[] args) {
